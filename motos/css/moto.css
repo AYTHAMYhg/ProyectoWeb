@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.top-bar {
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding: 6px 0;
+}
+.main-bar {
+  border-bottom: 1px solid #eee;
+}
+
+.main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+/*centrar logo*/
+.left-spacer,
+.actions {
+  flex: 1;
+}
+
+.logo {
+  flex: 0;
+}
+
+.logo img {
+  height: 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  font-size: 13px;
+  margin-left: 18px;
+}
+.nav-bar {
+  padding: 15px 0;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  font-size: 14px;
+}
+
+.nav-menu li {
+  cursor: pointer;
+  color: #777;
+}
+
+.nav-menu li.active {
+  color: red;
+  font-weight: 600;
+}
