@@ -3,6 +3,8 @@
   margin: 0;
   padding: 0;
 }
+
+/* --- TOP BAR --- */
 .top-bar {
   background: black;
   color: white;
@@ -10,6 +12,8 @@
   font-size: 12px;
   padding: 6px 0;
 }
+
+/* --- MAIN BAR --- */
 .main-bar {
   border-bottom: 1px solid #eee;
 }
@@ -22,20 +26,25 @@
   padding: 20px 40px;
 }
 
-/*centrar logo*/
+/* centrar logo correctamente */
 .left-spacer,
-.actions {
+.buttons {
   flex: 1;
 }
 
 .logo {
   flex: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .logo img {
-  height: 30px;
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
+/* botones de la derecha */
 .buttons {
   display: flex;
   justify-content: flex-end;
@@ -43,6 +52,19 @@
   font-size: 13px;
   margin-left: 18px;
 }
+
+.buttons a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.buttons a:hover {
+  color: red;
+}
+
+/* --- NAV BAR --- */
 .nav-bar {
   padding: 15px 0;
 }
@@ -58,16 +80,72 @@
 .nav-menu li {
   cursor: pointer;
   color: #777;
+  transition: color 0.2s ease;
+}
+
+.nav-menu li:hover {
+  color: black;
 }
 
 .nav-menu li.active {
   color: red;
   font-weight: 600;
 }
+
+/* --- SECCIÓN PRINCIPAL --- */
 .main-content {
+  width: 100%;
+  min-height: 90vh;
+  overflow: hidden;
 }
+
 .main-image {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: cover;
+  display: block;
 }
+.titulo-productos {
+  padding: 80px 0 40px;
+  text-align: center;
+}
+
+.textomain {
+  font-weight: bold;
+  font-size: 32px;
+  color: black;
+}
+/*--- SECCIÓN DE PRODUCTOS ---*/
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 60px 100px;
+  background: #fff;
+}
+.producto {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.producto img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  display: block;
+}
+.producto figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+
+/* --- FOOTER --- */
 .footer {
   background: #fff;
   margin-top: 60px;
@@ -89,6 +167,10 @@
   color: #fff;
   text-decoration: none;
   font-weight: 600;
+}
+
+.footer-bar .volver:hover {
+  text-decoration: underline;
 }
 
 /* Contenedor central */
@@ -140,7 +222,13 @@
   justify-content: center;
   text-decoration: none;
   overflow: hidden;
+  transition: border 0.2s ease;
 }
+
+.social-icons a:hover {
+  border-color: black;
+}
+
 .social-icons a img {
   width: 16px;
   height: 16px;
@@ -148,6 +236,67 @@
   display: block;
 }
 
+/* Lado derecho */
+.footer-right {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-column h6 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #777;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #777;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: black;
+}
+
+/* Parte inferior legal */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-top: 1px solid #eee;
+}
+
+.copyright {
+  font-size: 14px;
+  color: #999;
+  margin-left: 19%;
+}
+
+.buttons-legals a {
+  font-size: 14px;
+  color: #999;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 5%;
+  transition: color 0.2s ease;
+}
+
+.buttons-legals a:hover {
+  color: black;
+}
+
+/* --- RESPONSIVE --- */
 @media (max-width: 600px) {
   .footer-bar {
     flex-direction: column;
@@ -157,6 +306,11 @@
 
   .footer-left h2 {
     font-size: 24px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
   }
 
   .footer-right {
