@@ -13,34 +13,34 @@
   padding: 6px 0;
 }
 
-/* --- MAIN BAR --- */
+/* --- BARRA PRINCIPAL --- */
 .main-bar {
-  border-bottom: 1px solid #eee;
+  width: 100%;
 }
 
 .main-container {
-  max-width: 1400px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
-  padding: 20px 40px;
+  height: 60px; /* altura realista para un nav */
 }
 
-/* centrar logo correctamente */
+/* espaciadores laterales */
 .left-spacer,
 .buttons {
   flex: 1;
 }
 
+/* logo centrado */
 .logo {
-  flex: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
+/* LOGO */
 .logo img {
-  height: 40px;
-  width: auto;
+  height: 40px; /* tamaño visible */
+  width: auto; /* mantiene proporción */
   display: block;
 }
 
@@ -95,16 +95,18 @@
 /* --- SECCIÓN PRINCIPAL --- */
 .main-content {
   width: 100%;
-  min-height: 90vh;
+  height: 100vh;
   overflow: hidden;
 }
 
+/* imagen hero */
 .main-image {
   width: 100%;
-  height: auto;
-  max-height: 90vh;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; /* llena el contenedor */
+  object-position: center; /* centra el recorte */
   display: block;
+  image-rendering: auto;
 }
 .titulo-productos {
   padding: 80px 0 40px;
@@ -116,8 +118,8 @@
   font-size: 32px;
   color: black;
 }
-/*--- SECCIÓN DE PRODUCTOS ---*/
 
+/* --- SECCIÓN DE NOVEDADES --- */
 .productos {
   display: flex;
   flex-wrap: wrap;
@@ -126,25 +128,55 @@
   padding: 40px 60px 100px;
   background: #fff;
 }
+
+/* tarjeta del producto */
 .producto {
   width: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
+
+/* imagen */
 .producto img {
   width: 100%;
   height: 300px;
   object-fit: contain;
   display: block;
+  transition: transform 0.35s ease;
 }
+
+/* TEXTO */
 .producto figcaption {
   margin-top: 12px;
   font-size: 14px;
   color: #333;
   text-align: center;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
+/* --- HOVER PRODUCTO --- */
+.producto:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* imagen crece */
+.producto:hover img {
+  transform: scale(1.08);
+}
+
+/* texto animado */
+.producto:hover figcaption {
+  color: #e10600; /* rojo elegante tipo motorsport */
+  transform: translateY(4px);
+}
+/* --- SECCIÓN DE DESCUENTOS --- */
 /* --- FOOTER --- */
 .footer {
   background: #fff;
@@ -271,16 +303,17 @@
 /* Parte inferior legal */
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
+  justify-content: space-between;
   border-top: 1px solid #eee;
+  margin-right: 26%;
 }
 
 .copyright {
   font-size: 14px;
   color: #999;
-  margin-left: 19%;
+  margin-left: 37%;
 }
 
 .buttons-legals a {
@@ -288,7 +321,6 @@
   color: #999;
   text-decoration: none;
   margin-left: 10px;
-  margin-right: 5%;
   transition: color 0.2s ease;
 }
 
@@ -296,31 +328,183 @@
   color: black;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 600px) {
-  .footer-bar {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
+/* =========================
+   TABLETS (<=1024px)
+========================= */
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 18px;
+    font-size: 13px;
+    flex-wrap: wrap;
   }
 
-  .footer-left h2 {
-    font-size: 24px;
+  .productos {
+    gap: 30px;
+    padding: 40px 30px 80px;
+  }
+
+  .producto {
+    width: 220px;
   }
 
   .footer-container {
-    flex-direction: column;
     gap: 40px;
   }
 
   .footer-right {
+    gap: 40px;
+  }
+
+  .copyright {
+    margin-left: 0;
+  }
+}
+
+/* =========================
+   MÓVILES & TABLETS (<=768px)
+========================= */
+@media (max-width: 768px) {
+  /* HEADER */
+  .main-container {
+    padding: 0 15px;
+  }
+
+  .buttons {
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  /* NAV → pasa a columnas */
+  .nav-menu {
     flex-direction: column;
-    gap: 30px;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-bar {
+    padding: 20px 0;
+  }
+
+  /* HERO */
+  .main-content {
+    height: 60vh; /* 100vh en móvil es un error */
+  }
+
+  /* TÍTULO */
+  .textomain {
+    font-size: 26px;
+  }
+
+  /* PRODUCTOS */
+  .productos {
+    gap: 25px;
+    padding: 30px 20px 70px;
+  }
+
+  .producto {
+    width: 200px;
+  }
+
+  .producto img {
+    height: 240px;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+
+  .footer-left h2 {
+    font-size: 26px;
   }
 
   .footer-bottom {
+    padding: 20px;
+  }
+
+  .buttons-legals a {
+    margin: 0 5px;
+  }
+}
+
+/* =========================
+   MÓVILES PEQUEÑOS (<=480px)
+========================= */
+@media (max-width: 480px) {
+  /* TOP BAR */
+  .top-bar {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  /* HEADER */
+  .main-container {
     flex-direction: column;
+    height: auto;
     gap: 10px;
-    text-align: center;
+    padding: 10px 0;
+  }
+
+  .left-spacer {
+    display: none;
+  }
+
+  .buttons {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  /* NAV */
+  .nav-menu {
+    font-size: 13px;
+  }
+
+  /* HERO */
+  .main-content {
+    height: 50vh;
+  }
+
+  /* TÍTULO */
+  .textomain {
+    font-size: 22px;
+  }
+
+  /* PRODUCTOS → UNA COLUMNA */
+  .productos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .producto {
+    width: 90%;
+  }
+
+  .producto img {
+    height: 260px;
+  }
+
+  /* FOOTER */
+  .footer-bar {
+    padding: 10px;
+  }
+
+  .footer-left h2 {
+    font-size: 22px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+
+  .buttons-legals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
   }
 }
