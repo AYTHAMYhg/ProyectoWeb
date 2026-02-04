@@ -38,13 +38,17 @@
       <!-- Barra navegación -->
       <nav class="nav-bar">
         <ul class="nav-menu">
-          <li>Novedades</li>
-          <li class="active">Descuentos</li>
-          <li>Ropa</li>
-          <li>Accesorios</li>
-          <li>Niños</li>
-          <li>Cascos</li>
-          <li>Colecciones especiales</li>
+          <li id="nav-novedades"><a href="#novedades">Novedades</a></li>
+          <li id="nav-descuentos" class="active">
+            <a href="#descuentos">Descuentos</a>
+          </li>
+          <li id="nav-ropa"><a href="#ropa">Ropa</a></li>
+          <li id="nav-accesorios"><a href="#accesorios">Accesorios</a></li>
+          <li id="nav-ninos"><a href="#ninos">Niños</a></li>
+          <li id="nav-cascos"><a href="#cascos">Cascos</a></li>
+          <li id="nav-colecciones">
+            <a href="#colecciones">Colecciones especiales</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -60,11 +64,11 @@
 
     <!-- TÍTULO DE SECCIÓN -->
     <section class="titulo-productos">
-      <p class="textomain">Productos Oficiales</p>
+      <p class="textomain">Novedades</p>
     </section>
 
     <!-- SECCIÓN DE NOVEDADES -->
-    <section class="productos">
+    <section id="novedades" class="productos">
       <figure class="producto">
         <img src="../imgs/Mono-moto1.webp" alt="Producto 1" />
         <figcaption>Mono Shua | 245,00€</figcaption>
@@ -96,42 +100,89 @@
       </figure>
     </section>
 
+    <!-- TÍTULO DE SECCIÓN -->
+    <section class="titulo-productos">
+      <p class="textomain">Descuentos</p>
+    </section>
+
     <!-- SECCIÓN DE DESCUENTOS -->
-    <section class="descuentos">
+    <section id="descuentos" class="descuentos">
       <figure class="descuento">
         <img src="../imgs/descuento1.jpg" alt="Descuento 1" />
-        <figcaption>Casco Shiro | 245,00€</figcaption>
+        <figcaption>
+          Casco Shiro |
+          <span class="old-price">245,00€</span>
+          <span class="new-price">199,99€</span>
+        </figcaption>
       </figure>
 
       <figure class="descuento">
         <img src="../imgs/descuento4.jpg" alt="Descuento 2" />
-        <figcaption>Casco Shiro | 689,00€</figcaption>
+        <figcaption>
+          Casco Shiro |
+          <span class="old-price">689,00€</span>
+          <span class="new-price">499,99€</span>
+        </figcaption>
       </figure>
 
       <figure class="descuento">
         <img src="../imgs/descuento3.jpg" alt="Descuento 3" />
-        <figcaption>Casco G31-X | 99,99€</figcaption>
+        <figcaption>
+          Casco G31-X |
+          <span class="old-price">99,99€</span>
+          <span class="new-price">74,99€</span>
+        </figcaption>
       </figure>
 
       <figure class="descuento">
         <img src="../imgs/descuento2.jpg" alt="Descuento 4" />
-        <figcaption>Casco Must| 149,99€</figcaption>
+        <figcaption>
+          Casco Must |
+          <span class="old-price">149,99€</span>
+          <span class="new-price">119,99€</span>
+        </figcaption>
       </figure>
-      <figure class="descuento">
-        <img src="../imgs/descuento5a.jpg" alt="Descuento 5" />
-        <figcaption>Polo Ducati negro| 149,99€</figcaption>
+
+      <!-- POLO 5 CON GIRO -->
+      <figure class="descuento flip">
+        <div class="flip-card">
+          <img
+            src="../imgs/descuento5a.webp"
+            class="front"
+            alt="Polo Ducati frontal"
+          />
+          <img
+            src="../imgs/descuento5p.webp"
+            class="back"
+            alt="Polo Ducati trasera"
+          />
+        </div>
+        <figcaption>
+          Polo Ducati negro |
+          <span class="old-price">109,99€</span>
+          <span class="new-price">74,99€</span>
+        </figcaption>
       </figure>
-      <figure class="descuento">
-        <img src="../imgs/descuento5p.jpg" alt="Descuento 5" />
-        <figcaption>Casco Must| 149,99€</figcaption>
-      </figure>
-      <figure class="descuento">
-        <img src="../imgs/descuento6a.jpg" alt="Descuento 6" />
-        <figcaption>Polo ducati negro y rojo| 149,99€</figcaption>
-      </figure>
-      <figure class="descuento">
-        <img src="../imgs/descuento6p.jpg" alt="Descuento 6" />
-        <figcaption>Casco Must| 149,99€</figcaption>
+
+      <!-- POLO 6 CON GIRO -->
+      <figure class="descuento flip">
+        <div class="flip-card">
+          <img
+            src="../imgs/descuento6a.webp"
+            class="front"
+            alt="Polo Ducati frontal"
+          />
+          <img
+            src="../imgs/descuento6p.webp"
+            class="back"
+            alt="Polo Ducati trasera"
+          />
+        </div>
+        <figcaption>
+          Polo Ducati negro y rojo |
+          <span class="old-price">119,99€</span>
+          <span class="new-price">74,99€</span>
+        </figcaption>
       </figure>
     </section>
 
