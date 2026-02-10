@@ -34,6 +34,9 @@ html {
     backdrop-filter 0.35s ease,
     padding 0.35s ease;
 }
+.nav-bar {
+  font-family: "Montserrat";
+}
 /* menú centrado */
 .nav-menu {
   display: flex;
@@ -49,7 +52,7 @@ html {
 .nav-menu a {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.3px;
   transition: color 0.2s ease;
 }
@@ -147,6 +150,39 @@ html {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+}
+.grid-section {
+  max-width: 1300px;
+  margin: 0 auto; /* centra todo el bloque */
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.productos figure,
+.descuento,
+.producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productos img,
+.descuento img,
+.producto img {
+  width: 100%;
+  max-width: 230px; /* limita el tamaño */
+  height: 260px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+/* --- FLIP CARDS UNIFICADAS --- */
+.flip-card {
+  width: 230px;
+  height: 260px;
+  margin: 0 auto;
+} /* --- SEPARACIÓN ENTRE SECCIONES --- */
+section.productos,
+section.descuentos {
+  margin-bottom: 120px;
 }
 
 /* imagen hero */
@@ -280,6 +316,130 @@ html {
 
 /* hover texto */
 .descuento:hover figcaption {
+  color: #e10600;
+  transform: translateY(4px);
+}
+#ropa.grid-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 60px 100px;
+  background: #fff;
+}
+
+/* tarjeta ropa */
+#ropa .ropa {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* contenedor flip */
+#ropa .flip-card {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  perspective: 1000px;
+}
+
+/* imágenes del flip */
+#ropa .flip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease; /* misma fluidez que novedades */
+}
+
+/* texto */
+#ropa figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* hover tarjeta */
+#ropa .ropa:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* hover texto */
+#ropa .ropa:hover figcaption {
+  color: #e10600;
+  transform: translateY(4px);
+}
+#accesorios.grid-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 60px 100px;
+  background: #fff;
+}
+
+/* Card de accesorio */
+#accesorios .accesorio {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Contenedor de imagen normal */
+#accesorios .accesorio > img {
+  width: 100%;
+  height: 300px; /* fuerza altura uniforme */
+  object-fit: contain; /* mantiene proporción */
+  display: block;
+}
+
+/* Contenedor flip */
+#accesorios .flip-card {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+/* Imágenes del flip */
+#accesorios .flip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Texto */
+#accesorios figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Hover igual que Novedades */
+#accesorios .accesorio:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+#accesorios .accesorio:hover figcaption {
   color: #e10600;
   transform: translateY(4px);
 }
@@ -643,7 +803,79 @@ html {
   .producto img {
     height: 260px;
   }
+  @media (max-width: 1024px) {
+    .grid-section {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
 
+  @media (max-width: 600px) {
+    .grid-section {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  @media (max-width: 768px) {
+    #ropa.grid-section {
+      gap: 25px;
+      padding: 30px 20px 70px;
+    }
+
+    #ropa .ropa {
+      width: 200px;
+    }
+
+    #ropa .flip-card {
+      height: 240px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #ropa.grid-section {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #ropa .ropa {
+      width: 90%;
+    }
+
+    #ropa .flip-card {
+      height: 260px;
+    }
+  }
+  @media (max-width: 768px) {
+    #accesorios.grid-section {
+      gap: 25px;
+      padding: 30px 20px 70px;
+    }
+
+    #accesorios .accesorio {
+      width: 200px;
+    }
+
+    #accesorios .accesorio > img,
+    #accesorios .flip-card {
+      height: 240px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #accesorios.grid-section {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #accesorios .accesorio {
+      width: 90%;
+    }
+
+    #accesorios .accesorio > img,
+    #accesorios .flip-card {
+      height: 260px;
+    }
+  }
   /* FOOTER */
   .footer-bar {
     padding: 10px;
