@@ -443,6 +443,169 @@ section.descuentos {
   color: #e10600;
   transform: translateY(4px);
 }
+/* --- SECCIÓN MUJER --- */
+#mujer.grid-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 60px 100px;
+  max-width: 1300px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+#mujer .mujer {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+#mujer .flip-card {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+#mujer .flip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+}
+
+#mujer figcaption {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+#mujer .mujer:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+#mujer .mujer:hover figcaption {
+  color: #e10600;
+  transform: translateY(4px);
+}
+/* --- SECCIÓN CASCOS --- */
+#cascos.grid-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 60px 100px;
+  max-width: 1300px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+#cascos .casco {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+#cascos .flip-card {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+#cascos .flip-card img,
+#cascos img {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+}
+
+#cascos figcaption {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+#cascos .casco:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+#cascos .casco:hover figcaption {
+  color: #e10600;
+  transform: translateY(4px);
+}
+/* --- SECCIÓN COLECCIONES ESPECIALES --- */
+#ediciones.grid-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 60px 60px 120px;
+  max-width: 1300px;
+  margin: 0 auto;
+  background: #f7f7f7;
+}
+
+#ediciones .edicion-especial {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+#ediciones .flip-card {
+  width: 100%;
+  height: 200px;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+
+#ediciones .flip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+}
+
+#ediciones figcaption {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+}
+
+#ediciones .edicion-especial:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+}
 
 /* --- FLIP CARD --- */
 .flip-card {
@@ -484,6 +647,48 @@ section.descuentos {
 .new-price {
   color: black;
   font-weight: 700;
+}
+/* CARRUSEL INFINITO DE PRODUCTOS */
+.carrusel-productos {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  background: #0f0f0f;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carrusel-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: scrollCarrusel 60s linear infinite;
+}
+
+.carrusel-track img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  filter: grayscale(10%);
+  opacity: 0.9;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.carrusel-track img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes scrollCarrusel {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 /* --- FOOTER --- */
 .footer {
@@ -615,13 +820,13 @@ section.descuentos {
   padding: 20px 30px;
   justify-content: space-between;
   border-top: 1px solid #eee;
-  margin-right: 26%;
+  margin-right: 18%;
 }
 
 .copyright {
   font-size: 14px;
   color: #999;
-  margin-left: 37%;
+  margin-left: 23%;
 }
 
 .buttons-legals a {
@@ -745,6 +950,29 @@ section.descuentos {
 
   .buttons-legals a {
     margin: 0 5px;
+  }
+}
+@media (max-width: 768px) {
+  #mujer.grid-section,
+  #cascos.grid-section,
+  #ediciones.grid-section {
+    padding: 30px 20px 70px;
+    gap: 25px;
+  }
+
+  #mujer .mujer,
+  #cascos .casco,
+  #ediciones .edicion-especial {
+    width: 200px;
+  }
+
+  #mujer .flip-card,
+  #cascos .flip-card {
+    height: 240px;
+  }
+
+  #ediciones .flip-card {
+    height: 160px;
   }
 }
 
